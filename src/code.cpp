@@ -8,25 +8,33 @@ namespace assignment {
   // Task 1
   int squared_diff(int left, int right) {
 
-    // Write your code here ...
+    int name = (left - right) * (left - right);
 
-    return 0;
+    return name;
   }
 
   // Task 2
   bool check_bit(int mask, int bit_pos) {
-
-    // Write your code here ...
-
-    return false;
+    if (mask < 0 or bit_pos < 0){
+      return false;
+    } else{
+      if ((mask >> bit_pos) % 2 == 1){
+        return true;
+      }
+    }
   }
 
   // Task 3
   int max3(int left, int middle, int right) {
 
-    // Write your code here ...
-
-    return 0;
+    int maxim = left;
+    if (maxim < middle){
+      maxim = middle;
+    }
+    if (maxim < right){
+      maxim = right;
+    }
+    return maxim;
   }
 
   // Task 4
