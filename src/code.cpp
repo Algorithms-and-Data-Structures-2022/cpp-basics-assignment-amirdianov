@@ -15,23 +15,23 @@ namespace assignment {
 
   // Task 2
   bool check_bit(int mask, int bit_pos) {
-    if (mask < 0 or bit_pos < 0){
-      return false;
-    } else{
-      if ((mask >> bit_pos) % 2 == 1){
-        return true;
-      }
+    bool flag = true;
+    if (mask < 0 or bit_pos < 0) {
+      flag = false;
+    } else {
+      flag = (mask >> bit_pos) % 2 == 1;
     }
+    return flag;
   }
 
   // Task 3
   int max3(int left, int middle, int right) {
 
     int maxim = left;
-    if (maxim < middle){
+    if (maxim < middle) {
       maxim = middle;
     }
-    if (maxim < right){
+    if (maxim < right) {
       maxim = right;
     }
     return maxim;
