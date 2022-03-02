@@ -89,7 +89,7 @@ namespace assignment {
       for (int i = 0; i < length; i++) {
         pointer[i] = init_value;
         }
-//      delete[] pointer;
+//      std::fill(pointer, pointer + length, init_value);
       return pointer;
     } else {
       return nullptr;
@@ -99,10 +99,11 @@ namespace assignment {
   // Task 8
   int *clone_arr(int *arr_in, int length) {
     if (length > 0 and arr_in != nullptr) {
-      int *pointer = new int[length];
+      int* pointer = new int[length];
       for (int i = 0; i < length; i++){
         pointer[i] = *(arr_in + i);
       }
+//      std::copy(arr_in, arr_in + length, pointer);
       return pointer;
     } else {
       return nullptr;
@@ -121,6 +122,7 @@ namespace assignment {
       for (int i = 0; i < length; i++){
         if (i % k == 0) {
           os << *(arr + i);
+          os << '\t';
         }
       }
     }
