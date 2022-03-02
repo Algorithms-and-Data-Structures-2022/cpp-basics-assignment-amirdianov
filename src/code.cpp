@@ -98,16 +98,32 @@ namespace assignment {
 
   // Task 8
   int *clone_arr(int *arr_in, int length) {
-
-    // Write your code here ...
-
-    return nullptr;
+    if (length > 0 and arr_in != nullptr) {
+      int *pointer = new int[length];
+      for (int i = 0; i < length; i++){
+        pointer[i] = *(arr_in + i);
+      }
+      return pointer;
+    } else {
+      return nullptr;
+    }
   }
 
   // Task 9
   void print_kth_elements(int *arr, int length, int k, std::ostream &os) {
-
-    // Write your code here ...
+    if (arr == nullptr){
+      os << "Invalid argument: arr\n";
+    } else if(length <= 0){
+      os << "Invalid argument: length\n";
+    } else if(k <= 0){
+      os << "Invalid argument: k\n";
+    }else{
+      for (int i = 0; i < length; i++){
+        if (i % k == 0) {
+          os << *(arr + i);
+        }
+      }
+    }
   }
 
 }  // namespace assignment
