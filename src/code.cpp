@@ -39,22 +39,34 @@ namespace assignment {
 
   // Task 4
   void swap_args(int *left, int *right) {
-
-    // Write your code here ...
+    if (left == nullptr or right == nullptr) {
+      return;
+    } else {
+      int a = *left;
+      int b = *right;
+      *left = b;
+      *right = a;
+      return;
+    }
   }
 
   // Task 5
   int arr_sum(int *arr, int length) {
-
-    // Write your code here ...
-
-    return 0;
+    int s = 0;
+    if (arr != nullptr and length > 0) {
+      int perem = *arr;
+      for (int i = 0; length; i++) {
+        s = s + perem;
+        perem = *(arr + i + 1);
+      }
+    }
+    return s;
   }
 
   // Task 6
   int *find_max_elem(int *arr, int length) {
 
-    // Write your code here ...
+    int a =4;
 
     return nullptr;
   }
