@@ -54,31 +54,46 @@ namespace assignment {
   int arr_sum(int *arr, int length) {
     int s = 0;
     if (arr != nullptr and length > 0) {
-      int perem = *arr;
-      for (int i = 0; length; i++) {
-        s = s + perem;
-        perem = *(arr + i + 1);
+      int count = 0;
+      while (count < length) {
+        s += *(arr + count);
+        count += 1;
       }
-    }else{
+      return s;
+    } else {
       return 0;
     }
-    return s;
   }
 
   // Task 6
   int *find_max_elem(int *arr, int length) {
-
-    int a =4;
-
-    return nullptr;
+    int maxim = -100000000000;
+    int *pnt = arr;
+    if (arr != nullptr and length > 0) {
+      for (int i = 0; i < length; i++) {
+        if (maxim < *(arr + i)) {
+          maxim = *(arr + i);
+          pnt = arr + i;
+        }
+      }
+      return pnt;
+    } else {
+      return 0;
+    }
   }
 
   // Task 7
   int *allocate_arr(int length, int init_value) {
-
-    // Write your code here ...
-
-    return nullptr;
+    if (length > 0) {
+      int *pointer = new int[length];
+      for (int i = 0; i < length; i++) {
+        pointer[i] = init_value;
+        }
+//      delete[] pointer;
+      return pointer;
+    } else {
+      return nullptr;
+    }
   }
 
   // Task 8
