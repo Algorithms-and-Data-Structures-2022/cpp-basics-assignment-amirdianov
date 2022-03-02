@@ -59,6 +59,8 @@ namespace assignment {
         s = s + perem;
         perem = *(arr + i + 1);
       }
+    }else{
+      return 0;
     }
     return s;
   }
